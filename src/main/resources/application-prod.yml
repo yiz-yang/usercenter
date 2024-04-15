@@ -1,0 +1,37 @@
+# 公共配置文件
+spring:
+  application:
+    name: usercenter-backend
+#  profiles:
+#    active: prod
+  # DataSource Config
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user
+    username: username
+    password: password
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  # session失效时间
+  session:
+    timeout: 86400
+server:
+  port: 8180
+  servlet:
+    context-path: /api
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      logic-delete-field: isDelete # 全局逻辑删除的试题字段名
+      logic-delete-value: 1 #逻辑已删除值（默认1）
+      logic-not-delete-value: 0 #逻辑未删除值（默认1）
+aliyun:
+  oss:
+    endpoint: your endpoint
+    accessKeyId: your accessKeyId
+    accessKeySecret: your accessKeySecret
+    bucketName: your bucketName
+
